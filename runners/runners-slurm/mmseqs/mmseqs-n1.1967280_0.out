@@ -1,0 +1,8 @@
+K_SCORE=80
+>>START_TIME=04/04/21:11:02:57:884691741
+
+real	0m0.088s
+user	0m0.020s
+sys	0m0.003s
+/var/spool/slurmd/job1967280/slurm_script: line 39: mmseqs_n1_hmm.sh: command not found
+>>END_TIME=04/04/21:11:02:57:981255930

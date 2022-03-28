@@ -1,0 +1,156 @@
+#     MY_ID:  2020_09_14_21_19_34
+#    JOB_ID:  692844
+#   TASK_ID:  0
+#   N_TASKS:  1
+#  NODELIST:  compute-0-18
+# BENCHMARK:  soeding
+>>START_TIME: 09/14/20:21:19:933373975
+../set-env.sh: line 22: set-env_cluster.sh: No such file or directory
+# BENCH_DIR: /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/mmseqs
+# SCRIPT_DIR: /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners
+# setting environmental variables from 'set_env-db_profmark.sh'
+# setting environmental variables from 'set_env-db_soeding.sh'
+# setting environmental variables from 'set_env-db_test.sh'
+# load profmark database, TASK_ID=.
+# setting environmental variables from 'set-env_main.sh'
+# load soeding database.
+mkdir: created directory ‘/home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//temp//soeding/mmseqs//db/’
+#         MY_ID:  2020_09_14_21_19_34
+#        JOB_ID:  2020_09_14_21_19_34
+#       TASK_ID:  0 of 1
+#       PROGRAM:  mmseqs createdb
+#      LOCATION:  /home/dr120778/tools//MMseqs2/build/bin/mmseqs
+#        TARGET:  /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//db//soeding//target.fasta
+#     QUERY_HMM:  /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//db//soeding//query.hmm
+#      QUERY_FA:  /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//db//soeding//query.fasta
+# TARGET_MMSEQS:  /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//temp//soeding/mmseqs//db//target
+#  QUERY_MMSEQS:  /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//temp//soeding/mmseqs//db//query
+#         KMERS:  (7)
+#          KMER:  7
+#         SPLIT:  1
+#     MEM_LIMIT:  128000000
+#       VERBOSE:  3
+#       TMP_DIR:  /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//temp//soeding/mmseqs/
+# create target database.
+createdb /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//db//soeding//target.fasta /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//temp//soeding/mmseqs//db//target --shuffle 1 -v 3 
+
+MMseqs Version:       	12c499dcd647fb0d1c799bc5c6f9f25328ca3e09
+Database type         	0
+Shuffle input database	true
+Createdb mode         	0
+Offset of numeric ids 	0
+Compressed            	0
+Verbosity             	3
+
+Converting sequences
+[===================================================================================================	1 Mio. sequences processed
+===================================================================================================	2 Mio. sequences processed
+===================================================================================================	3 Mio. sequences processed
+===================================================================================================	4 Mio. sequences processed
+===================================================================================================	5 Mio. sequences processed
+===================================================================================================	6 Mio. sequences processed
+===================================================================================================	7 Mio. sequences processed
+===================================================================================================	8 Mio. sequences processed
+===================================================================================================	9 Mio. sequences processed
+===================================================================================================	10 Mio. sequences processed
+===================================================================================================	11 Mio. sequences processed
+===================================================================================================	12 Mio. sequences processed
+===================================================================================================	13 Mio. sequences processed
+===================================================================================================	14 Mio. sequences processed
+===================================================================================================	15 Mio. sequences processed
+===================================================================================================	16 Mio. sequences processed
+===================================================================================================	17 Mio. sequences processed
+===================================================================================================	18 Mio. sequences processed
+===================================================================================================	19 Mio. sequences processed
+===================================================================================================	20 Mio. sequences processed
+===================================================================================================	21 Mio. sequences processed
+===================================================================================================	22 Mio. sequences processed
+===================================================================================================	23 Mio. sequences processed
+===================================================================================================	24 Mio. sequences processed
+===================================================================================================	25 Mio. sequences processed
+===================================================================================================	26 Mio. sequences processed
+===================================================================================================	27 Mio. sequences processed
+===================================================================================================	28 Mio. sequences processed
+===================================================================================================	29 Mio. sequences processed
+===================================================================================================	30 Mio. sequences processed
+===========================================
+Time for merging to target_h: 0h 0m 19s 508ms
+Time for merging to target: 0h 0m 32s 460ms
+Database type: Aminoacid
+Time for merging to target.lookup: 0h 0m 0s 3ms
+Time for processing: 0h 3m 8s 739ms
+
+real	3m8.761s
+user	2m16.722s
+sys	0m32.552s
+# create query database.
+createdb /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//db//soeding//query.fasta /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//temp//soeding/mmseqs//db//query --shuffle 1 -v 3 
+
+MMseqs Version:       	12c499dcd647fb0d1c799bc5c6f9f25328ca3e09
+Database type         	0
+Shuffle input database	true
+Createdb mode         	0
+Offset of numeric ids 	0
+Compressed            	0
+Verbosity             	3
+
+Converting sequences
+[
+Time for merging to query_h: 0h 0m 0s 115ms
+Time for merging to query: 0h 0m 0s 85ms
+Database type: Aminoacid
+Time for merging to query.lookup: 0h 0m 0s 3ms
+Time for processing: 0h 0m 0s 425ms
+
+real	0m0.431s
+user	0m2.257s
+sys	0m0.068s
+# index target database.
+indexdb /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//temp//soeding/mmseqs//db//target /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//temp//soeding/mmseqs//db//target --seed-sub-mat nucl:nucleotide.out,aa:VTML80.out -k 7 --alph-size nucl:5,aa:21 --comp-bias-corr 1 --max-seq-len 65535 --max-seqs 300 --mask 1 --mask-lower-case 0 --spaced-kmer-mode 1 -s 7.5 --k-score 0 --check-compatible 0 --search-type 0 --split 0 --split-memory-limit 0 -v 3 --threads 36 
+
+Estimated memory consumption: 125G
+Write VERSION (0)
+Write META (1)
+Write SCOREMATRIX3MER (4)
+Write SCOREMATRIX2MER (3)
+Write SCOREMATRIXNAME (2)
+Write SPACEDPATTERN (23)
+Write DBR1INDEX (5)
+Write DBR1DATA (6)
+Write HDR1INDEX (18)
+Write HDR1DATA (19)
+Write GENERATOR (22)
+Index table: counting k-mers
+[=================================================================] 30.43M 1m 29s 606ms
+Index table: Masked residues: 139956395
+Index table: fill
+[=================================================================] 30.43M 1m 16s 176ms
+Index statistics
+Entries:          9635160134
+DB size:          64898 MB
+Avg k-mer size:   7.527469
+Top 10 k-mers
+    RAARQGG	91865
+    NCARIII	73101
+    RTNPRNI	69661
+    DTLTIAL	63165
+    TNNDTMT	60792
+    LISGALS	59659
+    ALGLLTS	59087
+    ISRNNRT	58600
+    ALLFIDV	57751
+    LSNLLSV	55568
+Write ENTRIES (9)
+Write ENTRIESOFFSETS (10)
+Write SEQINDEXDATASIZE (15)
+Write SEQINDEXSEQOFFSET (16)
+Write SEQINDEXDATA (14)
+Write ENTRIESNUM (12)
+Write SEQCOUNT (13)
+Time for merging to target.idx: 0h 0m 0s 5ms
+Time for processing: 0h 4m 55s 558ms
+
+real	4m55.576s
+user	100m13.614s
+sys	1m28.535s
+>>END_TIME: 09/14/20:21:27:816443581

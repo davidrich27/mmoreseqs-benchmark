@@ -1,0 +1,49 @@
+>>START_TIME=09/03/20:22:49:34:235811620
+# mmseqs search_n1 [BEGIN]
+../set-env.sh: line 22: set-env_cluster.sh: No such file or directory
+# BENCH_DIR: /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/mmseqs
+# SCRIPT_DIR: /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners
+# setting environmental variables from 'set_env-db_profmark.sh'
+# setting environmental variables from 'set_env-db_soeding.sh'
+# setting environmental variables from 'set_env-db_test.sh'
+# load profmark database, TASK_ID=.
+# setting environmental variables from 'set-env_main.sh'
+# load profmark database, TASK_ID=.
+mkdir: created directory ‘/home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//results//profmark/mmseqs/search_n1/d74795c4-f7e2-4f25-ac48-cdd5089bf642/’
+#         MY_ID:  d74795c4-f7e2-4f25-ac48-cdd5089bf642
+#        JOB_ID:  d74795c4-f7e2-4f25-ac48-cdd5089bf642
+#       TASK_ID:  0 of 1
+#       PROGRAM:  mmseqs search_n1
+#        TARGET:  /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//db//profmark//target.fasta
+#     QUERY_HMM:  /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//db//profmark//query.hmm
+#      QUERY_FA:  /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//db//profmark//query.cons.fasta
+# TARGET_MMSEQS:  /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//temp//profmark/mmseqs//db//target
+#  QUERY_MMSEQS:  /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//temp//profmark/mmseqs//db//query
+#           ALN:  /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//results//profmark/mmseqs/search_n1/d74795c4-f7e2-4f25-ac48-cdd5089bf642//search_n1.d74795c4-f7e2-4f25-ac48-cdd5089bf642
+#        ALNOUT:  /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//results//profmark/mmseqs/search_n1/d74795c4-f7e2-4f25-ac48-cdd5089bf642//search_n1.d74795c4-f7e2-4f25-ac48-cdd5089bf642.m8
+#         KMERS:  (7)
+#          KMER:  7
+#         SPLIT:  1
+#     MEM_LIMIT:  128000000
+#       E_VALUE:  d74795c4-f7e2-4f25-ac48-cdd5089bf642
+#       K_SCORE:  95
+#         SENSE:  5.7
+#  MIN_UNGAPPED:  0
+#      MAX_SEQS:  4000
+#     NUM_ITERS:  1
+#        E_PROF:  0.001
+#           PCA:  1.0
+#           PCB:  1.5
+#       THREADS:  1
+#       VERBOSE:  1
+#       TMP_DIR:  /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//temp//profmark/mmseqs/
+
+real	0m50.214s
+user	20m29.281s
+sys	0m7.501s
+
+real	0m0.305s
+user	0m4.128s
+sys	0m0.037s
+# mmseqs search_n1 [END]
+>>END_TIME=09/03/20:22:50:24:851919165

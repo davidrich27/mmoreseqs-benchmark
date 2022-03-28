@@ -1,0 +1,12 @@
+# Imported Data and Tools
+data-raw/*
+data-input/*
+data-temp/*
+data-output/*
+tools/*
+
+# Developer Tools
+.gdbinit
+.vscode
+*.code-workspace
+
