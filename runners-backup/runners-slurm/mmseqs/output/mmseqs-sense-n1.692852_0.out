@@ -1,0 +1,48 @@
+>>START_TIME=09/15/20:01:49:44:783006449
+# mmseqs sense_n1 [BEGIN]
+../set-env.sh: line 22: set-env_cluster.sh: No such file or directory
+# BENCH_DIR: /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/mmseqs
+# SCRIPT_DIR: /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners
+# setting environmental variables from 'set_env-db_profmark.sh'
+# setting environmental variables from 'set_env-db_soeding.sh'
+# setting environmental variables from 'set_env-db_test.sh'
+# load profmark database, TASK_ID=.
+# setting environmental variables from 'set-env_main.sh'
+# load soeding database.
+mkdir: created directory ‘/home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//results//soeding/mmseqs/sense_n1/2020_09_15_01_49_45/’
+#         MY_ID:  2020_09_15_01_49_45
+#        JOB_ID:  2020_09_15_01_49_45
+#       TASK_ID:  0 of 1
+#       PROGRAM:  mmseqs sense_n1
+#        TARGET:  /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//db//soeding//target.fasta
+#     QUERY_HMM:  /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//db//soeding//query.hmm
+#      QUERY_FA:  /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//db//soeding//query.fasta
+# TARGET_MMSEQS:  /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//temp//soeding/mmseqs//db//target
+#  QUERY_MMSEQS:  /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//temp//soeding/mmseqs//db//query
+#        ALNOUT:  /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//results//soeding/mmseqs/sense_n1/2020_09_15_01_49_45//sense_n1.2020_09_15_01_49_45.m8
+#         KMERS:  (7)
+#          KMER:  7
+#         SPLIT:  1
+#     MEM_LIMIT:  128000000
+#       E_VALUE:  2020_09_15_01_49_45
+#       K_SCORE:  75
+#         SENSE:  5.7
+#  MIN_UNGAPPED:  0
+#      MAX_SEQS:  4000
+#     NUM_ITERS:  1
+#        E_PROF:  0.001
+#           PCA:  1.0
+#           PCB:  1.5
+# 	  THREADS:  1
+#       VERBOSE:  1
+#       TMP_DIR:  /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//temp//soeding/mmseqs/
+
+real	171m2.023s
+user	5482m52.963s
+sys	55m1.945s
+
+real	0m29.191s
+user	1m21.724s
+sys	0m9.173s
+# mmseqs sense_n1 [END]
+>>END_TIME=09/15/20:04:41:16:131291337

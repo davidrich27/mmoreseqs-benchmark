@@ -1,0 +1,21 @@
+###############################################################
+# FILE: mmseqs_times.txt
+# DESC: Runtimes for mmseqs for different datasets.
+###############################################################
+
+# PROFMARK
+{
+FILE: /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/runners-slurm/mmseqs/output/profmark
+3.085
+0.076
+37.61
+50.214
+0.305
+=============
+91.290
+}
+
+# SOEDING
+build=
+index=
+search_n1=

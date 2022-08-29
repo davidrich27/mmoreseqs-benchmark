@@ -1,0 +1,48 @@
+>>START_TIME=09/14/20:12:33:41:300970020
+# mmseqs sense_n1 [BEGIN]
+../set-env.sh: line 22: set-env_cluster.sh: No such file or directory
+# BENCH_DIR: /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/mmseqs
+# SCRIPT_DIR: /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners
+# setting environmental variables from 'set_env-db_profmark.sh'
+# setting environmental variables from 'set_env-db_soeding.sh'
+# setting environmental variables from 'set_env-db_test.sh'
+# load profmark database, TASK_ID=.
+# setting environmental variables from 'set-env_main.sh'
+# load profmark database, TASK_ID=.
+mkdir: created directory ‘/home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//results//profmark/mmseqs/sense_n1/2020_09_14_12_33_41/’
+#         MY_ID:  2020_09_14_12_33_41
+#        JOB_ID:  2020_09_14_12_33_41
+#       TASK_ID:  0 of 1
+#       PROGRAM:  mmseqs sense_n1
+#        TARGET:  /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//db//profmark//target.fasta
+#     QUERY_HMM:  /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//db//profmark//query.hmm
+#      QUERY_FA:  /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//db//profmark//query.cons.fasta
+# TARGET_MMSEQS:  /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//temp//profmark/mmseqs//db//target
+#  QUERY_MMSEQS:  /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//temp//profmark/mmseqs//db//query
+#        ALNOUT:  /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//results//profmark/mmseqs/sense_n1/2020_09_14_12_33_41//sense_n1.2020_09_14_12_33_41.m8
+#         KMERS:  (7)
+#          KMER:  7
+#         SPLIT:  1
+#     MEM_LIMIT:  128000000
+#       E_VALUE:  2020_09_14_12_33_41
+#       K_SCORE:  80
+#         SENSE:  5.7
+#  MIN_UNGAPPED:  0
+#      MAX_SEQS:  4000
+#     NUM_ITERS:  1
+#        E_PROF:  0.001
+#           PCA:  1.0
+#           PCB:  1.5
+# 	  THREADS:  1
+#       VERBOSE:  1
+#       TMP_DIR:  /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//temp//profmark/mmseqs/
+
+real	2m58.107s
+user	72m8.031s
+sys	0m21.237s
+
+real	0m2.408s
+user	0m13.831s
+sys	0m0.455s
+# mmseqs sense_n1 [END]
+>>END_TIME=09/14/20:12:36:41:990445895

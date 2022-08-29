@@ -1,12 +1,12 @@
 #/bin/sh -ex
 ###################################################################
-# NAME: mmseqs_search_n1.sh
-# DESC: 
+# NAME:  mmseqs_n1.sh
+# DESC:  
 ###################################################################
 
 # program name
 SUITE=mmseqs
-TYPE=search_n1
+TYPE=mmseqs_n1
 
 echo "# $SUITE $TYPE [BEGIN]"
 
@@ -16,22 +16,22 @@ source "../set-env.sh"
 # parse commandline
 NUM_ARGS=$#
 # optional args 
-if (( $NUM_ARGS < 1 )); then
-	echo "Usage: <MY_ID> <JOB_ID> <opt:E_VALUE> <opt:K_SCORE>"
+if (( $NUM_ARGS < 3 )); then
+	echo "Usage: <MY_ID> <JOB_ID> <BENCHMARK> <opt:K_SCORE>"
 	exit
-elif (( $NUM_ARGS >= 2 )); then
-	E_VALUE=$2
-elif (( $NUM_ARGS >= 3 )); then
-	K_SCORE=$3
 fi
 # required args
 MY_ID=$1
 JOB_ID=$2
+MY_BENCHMARK=$3
+K_SCORE=$4
+MAX_SEQS=$5
 
 # select database 
-LOAD_PROFMARK
-#LOAD_SOEDING 
-#LOAD_TEST
+#LOAD_PROFMARK
+LOAD_SOEDING
+LOAD_MYBENCH
+SELECT_BENCHMARK $MY_BENCHMARK
 
 # default parameters (should not override if already been set)
 # job data
@@ -40,6 +40,7 @@ JOB_ID="${JOB_ID:-000}"
 TASK_ID="${TASK_ID:-0}"
 N_TASKS="${N_TASKS:-1}"
 # input
+BENCHMARK="${MY_BENCHMARK:-profmark}"
 TARGET="${TARGET:-test_target.fasta}"
 QUERY="${QUERY:-test_query.hmm}"
 # database params
@@ -49,9 +50,11 @@ SPLIT="${SPLIT:-1}"
 MEM_LIMIT="${MEM_LIMIT:-128000000}"
 # search params
 E_VALUE="${E_VALUE:-10000.0}"
-K_SCORE="${K_SCORE:-95}"
+K_SCORE="${K_SCORE:-75}"
+# normal: 95, sensitive: 80, mmseqs-plus: 75
 SENSE="${SENSE:-5.7}"
-MIN_UNGAPPED_SCORE="${MIN_UNGAPPED_SCORE:-0}"
+# faster: 1, fast: 4, normal: 6, sensitive: 7.5 
+MIN_UNGAPPED_SCORE="${MIN_UNGAPPED_SCORE:-15}"
 MAX_SEQS="${MAX_SEQS:-4000}"
 # iterative search params
 NUM_ITERS="${NUM_ITERS:-1}"
@@ -60,8 +63,13 @@ PCA="${PCA:-1.0}"
 PCB="${PCB:-1.5}"
 # other params
 THREADS="${THREADS:-1}"
-VERBOSE="${VERBOSE:-1}"
-MKDIR_V="${MKDIR_V:-3}"
+VERBOSE="${VERBOSE:-3}"
+REMOVE_TMP="${REMOVE_TMP:-0}"
+# other
+MKDIR_V="${MKDIR_V:--v}"
+
+# NOTE: Override max sequences
+MAX_SEQS=40000
 
 # temp directory
 MY_TMP_DIR=$TMP_DIR/$BENCHMARK/$SUITE/
@@ -74,9 +82,16 @@ QUERY_MMSEQS=$MY_MMSEQS_DIR/query
 
 # results directory
 MY_OUTPUT_DIR=$OUTPUT_DIR/$BENCHMARK/$SUITE/$TYPE/$JOB_ID/
-ALN=$MY_OUTPUT_DIR/${TYPE}.${MY_ID}
+ALN=$MY_OUTPUT_DIR/${TYPE}.k${K_SCORE}.${MY_ID}
 ALNOUT=${ALN}.m8
 mkdir -p -v $MY_OUTPUT_DIR
+
+# format of output 
+DEFAULT_FORMAT=query,target,pident,alnlen,mismatch,gapopen,qstart,qend,tstart,tend,evalue,bits
+ALL_FORMAT=query,target,evalue,gapopen,pident,nident,qstart,qend,qlen,tstart,tend,tlen,alnlen,raw,bits,cigar,qseq,tseq,qheader,theader,qaln,taln,qframe,tframe,mismatch,qcov,tcov,qset,qsetid,tset,tsetid,taxid,taxname,taxlineage
+CUSTOM_FORMAT=
+# select format
+MY_FORMAT=$DEFAULT_FORMAT
 
 # print arguments
 # job data
@@ -85,6 +100,7 @@ echo "#        JOB_ID:  $JOB_ID"
 echo "#       TASK_ID:  $TASK_ID of $N_TASKS"
 # program
 echo "#       PROGRAM:  $SUITE $TYPE"
+echo "#     BENCHMARK:  $BENCHMARK"
 echo "#        TARGET:  $TARGET"
 echo "#     QUERY_HMM:  $QUERY_HMM"
 echo "#      QUERY_FA:  $QUERY_FA"
@@ -112,27 +128,32 @@ echo "#           PCB:  $PCB"
 # other params
 echo "#       THREADS:  $THREADS"
 echo "#       VERBOSE:  $VERBOSE"
+echo "#    REMOVE_TMP:  $REMOVE_TMP"
 # tmp vars
 echo "#       TMP_DIR:  $MY_TMP_DIR"
 
 
 # mmseqs search
-time $MMSEQS search											          \
-	$QUERY_MMSEQS $TARGET_MMSEQS $ALN $MY_TMP_DIR 	\
-	-k 						        $KMER 							      \
-	--split 				      $SPLIT 							      \
+time $MMSEQS search											\
+	$QUERY_MMSEQS $TARGET_MMSEQS $ALN $MY_TMP_DIR 			\
+	-k 						$KMER 							\
+	--split 				$SPLIT 							\
 	--min-ungapped-score 	$MIN_UNGAPPED_SCORE 			\
-	-e 						        $E_VALUE 						      \
-	--k-score 				    $K_SCORE 						      \
-	--max-seqs 				    $MAX_SEQS 						    \
-	--remove-tmp-files 		0 								        \
-	-v 						        $VERBOSE					
-
+	-e 						$E_VALUE 						\
+	--k-score 				$K_SCORE 						\
+	--max-seqs 				$MAX_SEQS 						\
+	--remove-tmp-files 		$REMOVE_TMP 					\
+	-v 						$VERBOSE						\
+# 	opts:
+# 	-k-score 				$K_SCORE
+# 	-s 						$SENSE
 
 # convert alignments to results
-time $MMSEQS convertalis 									        \
-	$QUERY_MMSEQS $TARGET_MMSEQS $ALN $ALNOUT 			\
-	-v 						$VERBOSE
+time $MMSEQS convertalis 									\
+	$QUERY_MMSEQS $TARGET_MMSEQS $ALN $ALNOUT 				\
+	-v 						$VERBOSE						\
+	--format-output 		$MY_FORMAT						\
+
 
 echo "# $SUITE $TYPE [END]"
 

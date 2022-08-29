@@ -1,0 +1,10 @@
+name: mmoreseqs-benchmark
+channels: 
+  - conda-forge
+dependencies:
+  - python >= 3.7
+  - pip
+  - pip:
+      - Jinja2
+      - j2cli
+      - pyyaml

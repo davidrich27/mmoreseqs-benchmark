@@ -1,0 +1,133 @@
+#     MY_ID:  2020_09_18_02_05_35
+#    JOB_ID:  699591
+#   TASK_ID:  0
+#   N_TASKS:  1
+#  NODELIST:  compute-0-20
+# BENCHMARK:  my-bench
+>>START_TIME: 09/18/20:02:05:063944182
+../set-env.sh: line 22: set-env_cluster.sh: No such file or directory
+# BENCH_DIR: /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/mmseqs
+# SCRIPT_DIR: /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners
+# setting environmental variables from 'set_env-db_profmark.sh'
+# setting environmental variables from 'set_env-db_soeding.sh'
+# setting environmental variables from 'set_env-my_benchmark.sh'
+# setting environmental variables from 'set_env-db_test.sh'
+# load profmark database, TASK_ID=.
+# setting environmental variables from 'set-env_main.sh'
+# load mybench database, TASK_ID=.
+# load benchmark: my-bench...
+# load mybench database, TASK_ID=.
+#         MY_ID:  2020_09_18_02_05_35
+#        JOB_ID:  2020_09_18_02_05_35
+#       TASK_ID:  0 of 1
+#     BENCHMARK:  my-benchmark
+#       PROGRAM:  mmseqs createdb
+#      LOCATION:  /home/dr120778/tools//MMseqs2/build/bin/mmseqs
+#        TARGET:  /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//db//my-benchmark//target.fasta
+#     QUERY_HMM:  /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//db//my-benchmark//query.hmm
+#      QUERY_FA:  /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//db//my-benchmark//query.cons.fasta
+# TARGET_MMSEQS:  /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//temp//my-benchmark/mmseqs//db//target
+#  QUERY_MMSEQS:  /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//temp//my-benchmark/mmseqs//db//query
+#         KMERS:  (7)
+#          KMER:  7
+#         SPLIT:  1
+#     MEM_LIMIT:  128000000
+#       VERBOSE:  3
+#       TMP_DIR:  /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//temp//my-benchmark/mmseqs/
+# create target database.
+/home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//temp//my-benchmark/mmseqs//db//target exists and will be overwritten.
+createdb /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//db//my-benchmark//target.fasta /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//temp//my-benchmark/mmseqs//db//target --shuffle 1 -v 3 
+
+MMseqs Version:       	12c499dcd647fb0d1c799bc5c6f9f25328ca3e09
+Database type         	0
+Shuffle input database	true
+Createdb mode         	0
+Offset of numeric ids 	0
+Compressed            	0
+Verbosity             	3
+
+Converting sequences
+[===================================================================================================	1 Mio. sequences processed
+===================================================================================================	2 Mio. sequences processed
+=
+Time for merging to target_h: 0h 0m 1s 305ms
+Time for merging to target: 0h 0m 10s 188ms
+Database type: Aminoacid
+Time for merging to target.lookup: 0h 0m 0s 68ms
+Time for processing: 0h 0m 36s 926ms
+
+real	0m36.936s
+user	0m31.285s
+sys	0m11.779s
+# create query database.
+/home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//temp//my-benchmark/mmseqs//db//query exists and will be overwritten.
+createdb /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//db//my-benchmark//query.cons.fasta /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//temp//my-benchmark/mmseqs//db//query --shuffle 1 -v 3 
+
+MMseqs Version:       	12c499dcd647fb0d1c799bc5c6f9f25328ca3e09
+Database type         	0
+Shuffle input database	true
+Createdb mode         	0
+Offset of numeric ids 	0
+Compressed            	0
+Verbosity             	3
+
+Converting sequences
+[
+Time for merging to query_h: 0h 0m 0s 159ms
+Time for merging to query: 0h 0m 0s 152ms
+Database type: Aminoacid
+Time for merging to query.lookup: 0h 0m 0s 3ms
+Time for processing: 0h 0m 0s 516ms
+
+real	0m0.522s
+user	0m8.094s
+sys	0m0.112s
+# index target database.
+indexdb /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//temp//my-benchmark/mmseqs//db//target /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//temp//my-benchmark/mmseqs//db//target --seed-sub-mat nucl:nucleotide.out,aa:VTML80.out -k 7 --alph-size nucl:5,aa:21 --comp-bias-corr 1 --max-seq-len 65535 --max-seqs 300 --mask 1 --mask-lower-case 0 --spaced-kmer-mode 1 -s 7.5 --k-score 0 --check-compatible 0 --search-type 0 --split 0 --split-memory-limit 0 -v 3 --threads 36 
+
+Estimated memory consumption: 23G
+Write VERSION (0)
+Write META (1)
+Write SCOREMATRIX3MER (4)
+Write SCOREMATRIX2MER (3)
+Write SCOREMATRIXNAME (2)
+Write SPACEDPATTERN (23)
+Write DBR1INDEX (5)
+Write DBR1DATA (6)
+Write HDR1INDEX (18)
+Write HDR1DATA (19)
+Write GENERATOR (22)
+Index table: counting k-mers
+[=================================================================] 2.02M 29s 636ms
+Index table: Masked residues: 2764914
+Index table: fill
+[=================================================================] 2.02M 26s 312ms
+Index statistics
+Entries:          1597982885
+DB size:          18909 MB
+Avg k-mer size:   1.248424
+Top 10 k-mers
+    AAAAAAA	354
+    LLLLLLL	338
+    AAAALAA	240
+    AAAAAAL	235
+    LLALLLL	234
+    ALLLLLL	219
+    AAAAAAG	204
+    LLLLALL	200
+    LALLLLL	195
+    LALAALL	187
+Write ENTRIES (9)
+Write ENTRIESOFFSETS (10)
+Write SEQINDEXDATASIZE (15)
+Write SEQINDEXSEQOFFSET (16)
+Write SEQINDEXDATA (14)
+Write ENTRIESNUM (12)
+Write SEQCOUNT (13)
+Time for merging to target.idx: 0h 0m 0s 5ms
+Time for processing: 0h 2m 7s 872ms
+
+real	2m7.899s
+user	30m59.293s
+sys	4m0.513s
+>>END_TIME: 09/18/20:02:08:547753261

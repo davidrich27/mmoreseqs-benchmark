@@ -1,9 +1,13 @@
 # Imported Data and Tools
-data-raw/*
-data-input/*
-data-temp/*
-data-output/*
+data/*
+!data/scripts/
 tools/*
+db/*
+!db/scripts/
+results/*
+!results/scripts/
+evaluate/*
+!evaluate/scripts/
 
 # Developer Tools
 .gdbinit

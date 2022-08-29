@@ -1,0 +1,53 @@
+{
+  "name": "mmoreseqs-benchmark",
+  "folder": {
+    "input": "db",
+    "results": "results",
+    "temp": "temp",
+    "evaluate": "evaluate"
+  },
+  "dataset": {
+    "profmark": {
+      "query": "db/profmark/input-main/query.hmm",
+      "target": "db/profmark/input-main/target.fasta",
+      "query_split": "db/profmark/input-main/query_hmm_split/query.hmm.",
+      "target_split": "db/profmark/input-main/target_fasta_split/target.fasta."
+    }
+  },
+  "options": {
+    "hmmer": {
+      "--domtblout": [
+        "--domtblout",
+        ""
+      ],
+      "alnout": [
+        "-A",
+        ""
+      ],
+      "textwidth": [
+        "--notextw",
+        ""
+      ],
+      "e-value": [
+        "-E",
+        "10000.0"
+      ],
+      "number-of-cpus": [
+        "--cpu",
+        ""
+      ],
+      "target-size": [
+        "-Z",
+        ""
+      ],
+      "null2": [
+        "--nonull2",
+        ""
+      ]
+    },
+    "mmseqs": {
+      ""
+    },
+    "mmoreseqs": {}
+  }
+}

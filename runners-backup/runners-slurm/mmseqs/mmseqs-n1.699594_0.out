@@ -1,0 +1,202 @@
+K_SCORE=75
+>>START_TIME=09/18/20:02:12:23:568784902
+# mmseqs mmseqs_n1 [BEGIN]
+../set-env.sh: line 22: set-env_cluster.sh: No such file or directory
+# BENCH_DIR: /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/mmseqs
+# SCRIPT_DIR: /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners
+# setting environmental variables from 'set_env-db_profmark.sh'
+# setting environmental variables from 'set_env-db_soeding.sh'
+# setting environmental variables from 'set_env-my_benchmark.sh'
+# setting environmental variables from 'set_env-db_test.sh'
+# load profmark database, TASK_ID=.
+# setting environmental variables from 'set-env_main.sh'
+# load soeding database.
+# load mybench database, TASK_ID=.
+# load benchmark: my-benchmark...
+# load mybench database, TASK_ID=.
+mkdir: created directory ‘/home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//results//my-benchmark/mmseqs/mmseqs_n1/2020_09_18_02_12_24/’
+#         MY_ID:  001
+#        JOB_ID:  2020_09_18_02_12_24
+#       TASK_ID:  0 of 1
+#       PROGRAM:  mmseqs mmseqs_n1
+#     BENCHMARK:  my-benchmark
+#        TARGET:  /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//db//my-benchmark//target.fasta
+#     QUERY_HMM:  /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//db//my-benchmark//query.hmm
+#      QUERY_FA:  /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//db//my-benchmark//query.cons.fasta
+# TARGET_MMSEQS:  /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//temp//my-benchmark/mmseqs//db//target
+#  QUERY_MMSEQS:  /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//temp//my-benchmark/mmseqs//db//query
+#           ALN:  /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//results//my-benchmark/mmseqs/mmseqs_n1/2020_09_18_02_12_24//mmseqs_n1.k75.001
+#        ALNOUT:  /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//results//my-benchmark/mmseqs/mmseqs_n1/2020_09_18_02_12_24//mmseqs_n1.k75.001.m8
+#         KMERS:  (7)
+#          KMER:  7
+#         SPLIT:  1
+#     MEM_LIMIT:  128000000
+#       E_VALUE:  10000.0
+#       K_SCORE:  75
+#         SENSE:  5.7
+#  MIN_UNGAPPED:  15
+#      MAX_SEQS:  4000
+#     NUM_ITERS:  1
+#        E_PROF:  0.001
+#           PCA:  1.0
+#           PCB:  1.5
+#       THREADS:  1
+#       VERBOSE:  3
+#    REMOVE_TMP:  0
+#       TMP_DIR:  /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//temp//my-benchmark/mmseqs/
+search /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//temp//my-benchmark/mmseqs//db//query /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//temp//my-benchmark/mmseqs//db//target /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//results//my-benchmark/mmseqs/mmseqs_n1/2020_09_18_02_12_24//mmseqs_n1.k75.001 /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//temp//my-benchmark/mmseqs/ -k 7 --split 1 --min-ungapped-score 15 -e 10000.0 --k-score 75 --max-seqs 4000 --remove-tmp-files 0 -v 3 
+
+MMseqs Version:                     	12c499dcd647fb0d1c799bc5c6f9f25328ca3e09
+Substitution matrix                 	nucl:nucleotide.out,aa:blosum62.out
+Add backtrace                       	false
+Alignment mode                      	2
+Allow wrapped scoring               	false
+E-value threshold                   	10000
+Seq. id. threshold                  	0
+Min alignment length                	0
+Seq. id. mode                       	0
+Alternative alignments              	0
+Coverage threshold                  	0
+Coverage mode                       	0
+Max sequence length                 	65535
+Compositional bias                  	1
+Realign hits                        	false
+Max reject                          	2147483647
+Max accept                          	2147483647
+Include identical seq. id.          	false
+Preload mode                        	0
+Pseudo count a                      	1
+Pseudo count b                      	1.5
+Score bias                          	0
+Gap open cost                       	11
+Gap extension cost                  	1
+Zdrop                               	40
+Threads                             	36
+Compressed                          	0
+Verbosity                           	3
+Seed substitution matrix            	nucl:nucleotide.out,aa:VTML80.out
+Sensitivity                         	5.7
+k-mer length                        	7
+k-score                             	75
+Alphabet size                       	nucl:5,aa:21
+Max results per query               	4000
+Split database                      	1
+Split mode                          	2
+Split memory limit                  	0
+Diagonal scoring                    	true
+Exact k-mer matching                	0
+Mask residues                       	1
+Mask lower case residues            	0
+Minimum diagonal score              	15
+Spaced k-mers                       	1
+Spaced k-mer pattern                	
+Local temporary path                	
+Rescore mode                        	0
+Remove hits by seq. id. and coverage	false
+Sort results                        	0
+Mask profile                        	1
+Profile e-value threshold           	0.1
+Global sequence weighting           	false
+Allow deletions                     	false
+Filter MSA                          	1
+Maximum seq. id. threshold          	0.9
+Minimum seq. id.                    	0
+Minimum score per column            	-20
+Minimum coverage                    	0
+Select N most diverse seqs          	1000
+Omit consensus                      	false
+Min codons in orf                   	30
+Max codons in length                	32734
+Max orf gaps                        	2147483647
+Contig start mode                   	2
+Contig end mode                     	2
+Orf start mode                      	1
+Forward frames                      	1,2,3
+Reverse frames                      	1,2,3
+Translation table                   	1
+Translate orf                       	0
+Use all table starts                	false
+Offset of numeric ids               	0
+Create lookup                       	0
+Add orf stop                        	false
+Chain overlapping alignments        	0
+Merge query                         	1
+Search type                         	0
+Search iterations                   	1
+Start sensitivity                   	4
+Search steps                        	1
+Slice search mode                   	false
+Strand selection                    	1
+Disk space limit                    	0
+MPI runner                          	
+Force restart with latest tmp       	false
+Remove temporary prefilter /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//temp//my-benchmark/mmseqs//db//query /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//temp//my-benchmark/mmseqs//db//target.idx /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//temp//my-benchmark/mmseqs//15211523922157870285/pref_0 --sub-mat nucl:nucleotide.out,aa:blosum62.out --seed-sub-mat nucl:nucleotide.out,aa:VTML80.out -k 7 --k-score 75 --alph-size nucl:5,aa:21 --max-seq-len 65535 --max-seqs 4000 --split 1 --split-mode 2 --split-memory-limit 0 -c 0 --cov-mode 0 --comp-bias-corr 1 --diag-score 1 --exact-kmer-matching 0 --mask 1 --mask-lower-case 0 --min-ungapped-score 15 --add-self-matches 0 --spaced-kmer-mode 1 --db-load-mode 0 --pca 1 --pcb 1.5 --threads 36 --compressed 0 -v 3 -s 5.7 
+
+Index version: 16
+Generated by:  12c499dcd647fb0d1c799bc5c6f9f25328ca3e09
+ScoreMatrix:  VTML80.out
+Query database size: 3003 type: Aminoacid
+Estimated memory consumption: 23G
+Target database size: 2017088 type: Aminoacid
+Process prefiltering step 1 of 1
+
+k-mer similarity threshold: 75
+Starting prefiltering scores calculation (step 1 of 1)
+Query db start 1 to 3003
+Target db start 1 to 2017088
+[=================================================================] 3.00K 16m 39s 938ms
+
+113251.030529 k-mers per position
+47960941 DB matches per sequence
+2988 overflows
+1000 queries produce too much hits (truncated result)
+3998 sequences passed prefiltering per query sequence
+4000 median result list length
+0 sequences with 0 size result lists
+Time for merging to pref_0: 0h 0m 0s 143ms
+Time for processing: 0h 17m 18s 80ms
+align /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//temp//my-benchmark/mmseqs//db//query /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//temp//my-benchmark/mmseqs//db//target.idx /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//temp//my-benchmark/mmseqs//15211523922157870285/pref_0 /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//results//my-benchmark/mmseqs/mmseqs_n1/2020_09_18_02_12_24//mmseqs_n1.k75.001 --sub-mat nucl:nucleotide.out,aa:blosum62.out -a 0 --alignment-mode 2 --wrapped-scoring 0 -e 10000 --min-seq-id 0 --min-aln-len 0 --seq-id-mode 0 --alt-ali 0 -c 0 --cov-mode 0 --max-seq-len 65535 --comp-bias-corr 1 --realign 0 --max-rejected 2147483647 --max-accept 2147483647 --add-self-matches 0 --db-load-mode 0 --pca 1 --pcb 1.5 --score-bias 0 --gap-open 11 --gap-extend 1 --zdrop 40 --threads 36 --compressed 0 -v 3 
+
+Index version: 16
+Generated by:  12c499dcd647fb0d1c799bc5c6f9f25328ca3e09
+ScoreMatrix:  VTML80.out
+Compute score and coverage
+Query database size: 3003 type: Aminoacid
+Target database size: 2017088 type: Aminoacid
+Calculation of alignments
+[=================================================================] 3.00K 29s 100ms
+Time for merging to mmseqs_n1.k75.001: 0h 0m 0s 138ms
+
+12008441 alignments calculated.
+2146196 sequence pairs passed the thresholds (0.178724 of overall calculated).
+714.683960 hits per query sequence.
+Time for processing: 0h 0m 31s 288ms
+
+real	17m49.469s
+user	419m15.240s
+sys	1m26.608s
+convertalis /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//temp//my-benchmark/mmseqs//db//query /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//temp//my-benchmark/mmseqs//db//target /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//results//my-benchmark/mmseqs/mmseqs_n1/2020_09_18_02_12_24//mmseqs_n1.k75.001 /home/dr120778/Wheeler-Labs/benchmarks/general-benchmark/runners/..//results//my-benchmark/mmseqs/mmseqs_n1/2020_09_18_02_12_24//mmseqs_n1.k75.001.m8 -v 3 --format-output query,target,pident,alnlen,mismatch,gapopen,qstart,qend,tstart,tend,evalue,bits 
+
+MMseqs Version:        	12c499dcd647fb0d1c799bc5c6f9f25328ca3e09
+Substitution matrix    	nucl:nucleotide.out,aa:blosum62.out
+Alignment format       	0
+Format alignment output	query,target,pident,alnlen,mismatch,gapopen,qstart,qend,tstart,tend,evalue,bits
+Translation table      	1
+Gap open cost          	11
+Gap extension cost     	1
+Database output        	false
+Preload mode           	0
+Search type            	0
+Threads                	36
+Compressed             	0
+Verbosity              	3
+
+[=================================================================] 3.00K 1s 209ms
+Time for merging to mmseqs_n1.k75.001.m8: 0h 0m 0s 522ms
+Time for processing: 0h 0m 3s 281ms
+
+real	0m3.292s
+user	0m44.567s
+sys	0m0.786s
+# mmseqs mmseqs_n1 [END]
+>>END_TIME=09/18/20:02:30:16:537818521
