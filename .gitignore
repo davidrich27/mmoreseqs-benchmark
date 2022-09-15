@@ -8,6 +8,16 @@ results/*
 !results/scripts/
 evaluate/*
 !evaluate/scripts/
+!evaluate/results_raw/
+!evaluate/results_m3/
+!evaluate/results_tf/
+!evaluate/results_final/
+evaluate/results_raw/*
+evaluate/results_m3/*
+evaluate/results_tf/*
+evaluate/results_final/*
+stdout/
+temp/
 
 # Developer Tools
 .gdbinit
